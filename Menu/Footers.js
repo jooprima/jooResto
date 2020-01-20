@@ -11,15 +11,15 @@ export default class Footers extends Component {
             <Text>Home</Text>
           </Button>
           <Button vertical>
-            <Icon name="camera" />
-            <Text>Makanan</Text>
+            <Icon name="pizza" />
+            <Text>Masakan</Text>
           </Button>
-          <Button vertical active>
-            <Icon active name="navigate" />
+          <Button vertical>
+            <Icon active name="home" />
             <Text>Kota</Text>
           </Button>
           <Button vertical>
-            <Icon name="person" />
+            <Icon name="grid" />
             <Text>Kategori</Text>
           </Button>
         </FooterTab>
