@@ -9,14 +9,18 @@
 import {createAppContainer} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
 import Homes from './Menu/Home/Homes';
+import Masakan from './Menu/Masakan/Masakan';
 
 const Router = createStackNavigator(
   {
-    Home: {
+    Homes: {
       screen: Homes,
     },
+    Masakan: {
+      screen: Masakan,
+    },
   },
-  {initialRouteName: 'Home'},
+  {initialRouteName: 'Homes'},
 );
 
 export default createAppContainer(Router);

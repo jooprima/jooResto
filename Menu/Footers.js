@@ -1,16 +1,25 @@
 import React, {Component} from 'react';
 import {Footer, FooterTab, Button, Icon, Text} from 'native-base';
+import {withNavigation} from 'react-navigation';
 
-export default class Footers extends Component {
+class Footers extends Component {
   render() {
     return (
       <Footer>
         <FooterTab>
-          <Button vertical>
+          <Button
+            vertical
+            onPress={() => {
+              this.props.navigation.navigate('Homes');
+            }}>
             <Icon name="apps" />
             <Text>Home</Text>
           </Button>
-          <Button vertical>
+          <Button
+            vertical
+            onPress={() => {
+              this.props.navigation.navigate('Masakan');
+            }}>
             <Icon name="pizza" />
             <Text>Masakan</Text>
           </Button>
@@ -27,3 +36,5 @@ export default class Footers extends Component {
     );
   }
 }
+
+export default withNavigation(Footers);

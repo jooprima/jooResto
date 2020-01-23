@@ -62,7 +62,7 @@ export default class Homes extends Component {
   render() {
     return (
       <View style={{flex: 1}}>
-        <StatusBar backgroundColor="#7457e8" />
+        <StatusBar backgroundColor="#4139c6" />
 
         {/* ImageSlider */}
         <Content>
@@ -113,7 +113,7 @@ export default class Homes extends Component {
                 </CardItem>
                 <CardItem>
                   <Left>
-                    <Icon name="star" style={{color:'#f2ed0d'}} />
+                    <Icon name="star" style={{color: '#f2ed0d'}} />
                     <Text>{data.restaurant.user_rating.aggregate_rating}</Text>
                   </Left>
                   <Right>
