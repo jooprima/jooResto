@@ -2,12 +2,13 @@ import React, {Component} from 'react';
 import {View, Text} from 'native-base';
 import Footers from '../Footers.js';
 import ImageSlider from 'react-native-image-slider';
+import {StatusBar} from 'react-native';
 
 export default class Homes extends Component {
   constructor() {
     super();
     this.state = {
-      images: [
+      image: [
         'https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
         'https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
         'https://images.pexels.com/photos/675951/pexels-photo-675951.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
@@ -16,11 +17,14 @@ export default class Homes extends Component {
     };
   }
 
+  static navigationOptions = {headerShown: false};
+
   render() {
     return (
       <View style={{flex: 1}}>
-        <View style={{flex: 1}}>
-          <ImageSlider images={this.state.images} />
+        <StatusBar backgroundColor="#46ebf9" />
+        <View style={{height: 150}}>
+          <ImageSlider images={this.state.image} autoPlayWithInterval={3000} />
         </View>
         <Footers />
       </View>
