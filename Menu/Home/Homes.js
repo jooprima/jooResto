@@ -98,12 +98,14 @@ export default class Homes extends Component {
             } else {
               image = data.restaurant.thumb;
             }
+
             return (
               <TouchableOpacity
                 key={key}
                 onPress={() => {
                   this.props.navigation.navigate('Restaurant', {
                     nama_restaurant: data.restaurant.name,
+                    res_id: data.restaurant.R.res_id,
                   });
                 }}>
                 <Card>
