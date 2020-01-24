@@ -11,7 +11,7 @@ import {
 } from 'native-base';
 import Footers from '../Footers.js';
 import ImageSlider from 'react-native-image-slider';
-import {StatusBar, Image, View} from 'react-native';
+import {StatusBar, Image, View, TouchableOpacity} from 'react-native';
 import Axios from 'axios';
 
 export default class Homes extends Component {
@@ -99,28 +99,38 @@ export default class Homes extends Component {
               image = data.restaurant.thumb;
             }
             return (
-              <Card key={key}>
-                <CardItem>
-                  <Text>{data.restaurant.name}</Text>
-                </CardItem>
-                <CardItem cardBody>
-                  <Image
-                    style={{height: 200, width: null, flex: 1}}
-                    source={{
-                      uri: image,
-                    }}
-                  />
-                </CardItem>
-                <CardItem>
-                  <Left>
-                    <Icon name="star" style={{color: '#f2ed0d'}} />
-                    <Text>{data.restaurant.user_rating.aggregate_rating}</Text>
-                  </Left>
-                  <Right>
-                    <Text>{data.restaurant.user_rating.rating_text}</Text>
-                  </Right>
-                </CardItem>
-              </Card>
+              <TouchableOpacity
+                key={key}
+                onPress={() => {
+                  this.props.navigation.navigate('Restaurant', {
+                    nama_restaurant: data.restaurant.name,
+                  });
+                }}>
+                <Card>
+                  <CardItem>
+                    <Text>{data.restaurant.name}</Text>
+                  </CardItem>
+                  <CardItem cardBody>
+                    <Image
+                      style={{height: 200, width: null, flex: 1}}
+                      source={{
+                        uri: image,
+                      }}
+                    />
+                  </CardItem>
+                  <CardItem>
+                    <Left>
+                      <Icon name="star" style={{color: '#f2ed0d'}} />
+                      <Text>
+                        {data.restaurant.user_rating.aggregate_rating}
+                      </Text>
+                    </Left>
+                    <Right>
+                      <Text>{data.restaurant.user_rating.rating_text}</Text>
+                    </Right>
+                  </CardItem>
+                </Card>
+              </TouchableOpacity>
             );
           })}
         </Content>
