@@ -23,7 +23,11 @@ class Footers extends Component {
             <Icon name="pizza" />
             <Text>Masakan</Text>
           </Button>
-          <Button vertical>
+          <Button
+            vertical
+            onPress={() => {
+              this.props.navigation.navigate('Kota');
+            }}>
             <Icon active name="home" />
             <Text>Kota</Text>
           </Button>
