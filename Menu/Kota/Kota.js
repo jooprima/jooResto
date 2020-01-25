@@ -10,13 +10,13 @@ export default class Kota extends Component {
       <Container>
         <Tabs renderTabBar={() => <ScrollableTab />}>
           <Tab heading="Jakarta">
-            <RestaurantKota nama="Jakarta" />
+            <RestaurantKota nama="Jakarta" id_kota="74" />
           </Tab>
           <Tab heading="Bandung">
-            <RestaurantKota nama="Bandung" />
+            <RestaurantKota nama="Bandung" id_kota="11052" />
           </Tab>
           <Tab heading="Bali">
-            <RestaurantKota nama="Bali" />
+            <RestaurantKota nama="Bali" id_kota="170" />
           </Tab>
         </Tabs>
 
