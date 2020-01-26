@@ -12,6 +12,7 @@ import Homes from './Menu/Home/Homes';
 import Masakan from './Menu/Masakan/Masakan';
 import Restaurant from './Menu/Restaurant';
 import Kota from './Menu/Kota/Kota';
+import Category from './Menu/Categori/Category';
 
 const Router = createStackNavigator(
   {
@@ -26,6 +27,9 @@ const Router = createStackNavigator(
     },
     Kota: {
       screen: Kota,
+    },
+    Category: {
+      screen: Category,
     },
   },
   {initialRouteName: 'Homes'},

@@ -31,7 +31,11 @@ class Footers extends Component {
             <Icon active name="home" />
             <Text>Kota</Text>
           </Button>
-          <Button vertical>
+          <Button
+            vertical
+            onPress={() => {
+              this.props.navigation.navigate('Category');
+            }}>
             <Icon name="grid" />
             <Text>Kategori</Text>
           </Button>
