@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Image} from 'react-native';
+import {View, Image, TouchableOpacity} from 'react-native';
 import {
   Text,
   Content,
@@ -79,34 +79,43 @@ export default class Masakan extends Component {
                 image = data.restaurant.thumb;
               }
               return (
-                <Card key={key} style={{width: 300}}>
-                  <CardItem>
-                    <Left>
-                      <Text>{data.restaurant.name}</Text>
-                    </Left>
-                    <Right>
-                      <Icon name="home" />
-                    </Right>
-                  </CardItem>
-                  <CardItem cardBody>
-                    <Image
-                      style={{height: 200, width: null, flex: 1}}
-                      source={{
-                        uri: image,
-                      }}
-                    />
-                  </CardItem>
-                  <CardItem>
-                    <Left>
-                      <Text>Jenis Masakan</Text>
-                    </Left>
-                  </CardItem>
-                  <CardItem>
-                    <Left>
-                      <Text> {data.restaurant.cuisines} </Text>
-                    </Left>
-                  </CardItem>
-                </Card>
+                <TouchableOpacity
+                  key={key}
+                  onPress={() => {
+                    this.props.navigation.navigate('Restaurant', {
+                      nama_restaurant: data.restaurant.name,
+                      res_id: data.restaurant.R.res_id,
+                    });
+                  }}>
+                  <Card style={{width: 300}}>
+                    <CardItem>
+                      <Left>
+                        <Text>{data.restaurant.name}</Text>
+                      </Left>
+                      <Right>
+                        <Icon name="home" />
+                      </Right>
+                    </CardItem>
+                    <CardItem cardBody>
+                      <Image
+                        style={{height: 200, width: null, flex: 1}}
+                        source={{
+                          uri: image,
+                        }}
+                      />
+                    </CardItem>
+                    <CardItem>
+                      <Left>
+                        <Text>Jenis Masakan</Text>
+                      </Left>
+                    </CardItem>
+                    <CardItem>
+                      <Left>
+                        <Text> {data.restaurant.cuisines} </Text>
+                      </Left>
+                    </CardItem>
+                  </Card>
+                </TouchableOpacity>
               );
             })}
           </Content>
