@@ -6,7 +6,7 @@ class Footers extends Component {
   render() {
     return (
       <Footer>
-        <FooterTab>
+        <FooterTab style={{backgroundColor:'#ad481c'}}>
           <Button
             vertical
             onPress={() => {

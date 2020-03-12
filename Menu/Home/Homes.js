@@ -62,9 +62,9 @@ export default class Homes extends Component {
   render() {
     return (
       <View style={{flex: 1}}>
-        <StatusBar backgroundColor="#4139c6" />
+        <StatusBar backgroundColor="#7d3630" />
 
-        {/* ImageSlider */}
+        {/* ImageSlider #ce7647 */}
         <Content>
           <View style={{height: 150}}>
             <ImageSlider
@@ -78,7 +78,10 @@ export default class Homes extends Component {
           <Content style={{marginTop: 20}} horizontal>
             {this.state.dataKategori.map((data, key) => {
               return (
-                <Button rounded key={key} style={{margin: 5}}>
+                <Button
+                  rounded
+                  key={key}
+                  style={{margin: 5, backgroundColor: '#ad481c'}}>
                   <Text>{data.categories.name}</Text>
                 </Button>
               );

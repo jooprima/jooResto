@@ -82,7 +82,10 @@ export default class Category extends Component {
           <Content horizontal>
             {this.state.dataCategory.map((data, key) => {
               return (
-                <Button style={{margin: 10}} key={key}>
+                <Button
+                  style={{margin: 10, backgroundColor: '#ad481c'}}
+                  key={key}
+                  rounded>
                   <Text> {data.categories.name} </Text>
                 </Button>
               );

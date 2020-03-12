@@ -61,7 +61,9 @@ export default class Masakan extends Component {
             {this.state.jenisMasakan.map((data, key) => {
               return (
                 <View key={key}>
-                  <Button style={{margin: 10}}>
+                  <Button
+                    style={{margin: 10, backgroundColor: '#ad481c'}}
+                    rounded>
                     <Text>{data.cuisine.cuisine_name}</Text>
                   </Button>
                 </View>
